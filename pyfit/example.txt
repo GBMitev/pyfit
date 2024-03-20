@@ -1,0 +1,31 @@
+# duo_command = "/nfs/workspaces/exomol/syurchenko/programs/duo//j-duo-1706.x"
+# states_file_name = "test"
+# marvel = pd.read_csv("/home/gmitev/Documents/PhD_Yr_3/OHModel/DuoModel/XABC/FittingData/Fitting_Data_SoftNN.csv")
+# manifold_cond = [marvel["State"]==1,marvel["State"]==2,marvel["State"]==3,marvel["State"]==4]
+# manifold_vals = ["X2Pi","A2Sigma+","B2Sigma+","C2Sigma+"]
+
+# marvel["Manifold"] = np.select(manifold_cond, manifold_vals)
+
+# marvel = marvel[["J","tau","E","Manifold","v","Lambda","Sigma","Omega"]]
+# X = marvel[marvel["Manifold"] == "X2Pi"]
+# A = marvel[marvel["Manifold"] == "A2Sigma+"]
+# B = marvel[marvel["Manifold"] == "B2Sigma+"]
+# C = marvel[marvel["Manifold"] == "C2Sigma+"]
+
+# vary = {"poten_3_TE":True,
+#         "poten_3_RE":False,
+#         "poten_3_B0":False,
+#         "poten_3_B1":False,
+#         "spin_rot_3_3_A0":False}
+
+# bounds = {"poten_3_TE":[69000,71000],
+#           "poten_3_RE":[1.84,1.88],
+#           "poten_3_B0":[-10,10],
+#           "poten_3_B1":[-10,10],
+#           "spin_rot_3_3_A0":[-20,20]}
+
+# inp = Duo_Input("OH.inp")
+# inp.set_varying_parameters(vary)
+# inp.set_parameter_bounds(bounds)
+
+# result = inp.fit_input_file(B, duo_command, states_file_name,"dual_annealing",nan_policy="omit")
